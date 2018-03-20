@@ -21,9 +21,6 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //float inputH = Input.GetAxis("Horizontal");
-        //float inputV = Input.GetAxis("Vertical");
-
         // set velocity to zero
         rb.velocity = Vector3.zero;
 
@@ -47,7 +44,7 @@ public class PlayerMovement : MonoBehaviour
             //isJumping = false;
         }
 
-        // press A to rotate to the left and D to the right
+        // press Q to rotate to the left and E to the right
         if (Input.GetKey(KeyCode.Q))
         {
             transform.Rotate(Vector3.up, -Mathf.Clamp(180f * Time.deltaTime, 0f, 360f));
