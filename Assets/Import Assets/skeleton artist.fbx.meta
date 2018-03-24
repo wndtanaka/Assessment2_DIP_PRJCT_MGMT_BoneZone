@@ -1,0 +1,338 @@
+fileFormatVersion: 2
+guid: 70f4f3a8f05c0dc408a0148d2e9049c2
+timeCreated: 1521882816
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: Armature
+    100002: Camera
+    100004: Cube.001
+    100006: Cube.003
+    100008: Cylinder
+    100010: foot2
+    100012: foot2.001
+    100014: foot2.001_end
+    100016: foot2_end
+    100018: footcontrol.L
+    100020: footctrl.R
+    100022: footIK.L
+    100024: footIK.L_end
+    100026: footrollCtrl.l
+    100028: footrollCtrl.l_end
+    100030: footrollCTRL.R
+    100032: footrollCTRL.R_end
+    100034: head
+    100036: head_end
+    100038: heelroll.L
+    100040: heelroll.R
+    100042: Lamp
+    100044: left finger2
+    100046: left finger2.001
+    100048: left finger2.001_end
+    100050: left finger2_end
+    100052: leftarm
+    100054: leftarm.001
+    100056: leftfinge
+    100058: leftfinge.001
+    100060: leftfingers1
+    100062: leftfingers1.001
+    100064: leftfingers2
+    100066: leftfingers2.001
+    100068: leftfingers2.001_end
+    100070: leftfingers2_end
+    100072: leftforearm
+    100074: leftforearm.001
+    100076: lefthand
+    100078: lefthand.001
+    100080: leg
+    100082: leg.001
+    100084: neck
+    100086: rFoot.IK
+    100088: rFoot.IK_end
+    100090: root1
+    100092: root1R
+    100094: //RootNode
+    100096: spine1
+    100098: spine2
+    100100: spine3
+    100102: thigh
+    100104: thigh.001
+    100106: toeroll.L
+    100108: TOEROOL.R
+    400000: Armature
+    400002: Camera
+    400004: Cube.001
+    400006: Cube.003
+    400008: Cylinder
+    400010: foot2
+    400012: foot2.001
+    400014: foot2.001_end
+    400016: foot2_end
+    400018: footcontrol.L
+    400020: footctrl.R
+    400022: footIK.L
+    400024: footIK.L_end
+    400026: footrollCtrl.l
+    400028: footrollCtrl.l_end
+    400030: footrollCTRL.R
+    400032: footrollCTRL.R_end
+    400034: head
+    400036: head_end
+    400038: heelroll.L
+    400040: heelroll.R
+    400042: Lamp
+    400044: left finger2
+    400046: left finger2.001
+    400048: left finger2.001_end
+    400050: left finger2_end
+    400052: leftarm
+    400054: leftarm.001
+    400056: leftfinge
+    400058: leftfinge.001
+    400060: leftfingers1
+    400062: leftfingers1.001
+    400064: leftfingers2
+    400066: leftfingers2.001
+    400068: leftfingers2.001_end
+    400070: leftfingers2_end
+    400072: leftforearm
+    400074: leftforearm.001
+    400076: lefthand
+    400078: lefthand.001
+    400080: leg
+    400082: leg.001
+    400084: neck
+    400086: rFoot.IK
+    400088: rFoot.IK_end
+    400090: root1
+    400092: root1R
+    400094: //RootNode
+    400096: spine1
+    400098: spine2
+    400100: spine3
+    400102: thigh
+    400104: thigh.001
+    400106: toeroll.L
+    400108: TOEROOL.R
+    2300000: Cube.001
+    2300002: Cylinder
+    3300000: Cube.001
+    3300002: Cylinder
+    4300000: Cylinder
+    4300002: Cube.001
+    4300004: Cube.003
+    7400000: Skeleton
+    7400002: Skeleton
+    9500000: //RootNode
+    13700000: Cube.003
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 3
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Skeleton
+      takeName: Armature|ArmatureAction
+      firstFrame: 0
+      lastFrame: 16
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/footcontrol.L
+        weight: 1
+      - path: Armature/footcontrol.L/footrollCtrl.l
+        weight: 1
+      - path: Armature/footcontrol.L/footrollCtrl.l/footrollCtrl.l_end
+        weight: 1
+      - path: Armature/footcontrol.L/heelroll.L
+        weight: 1
+      - path: Armature/footcontrol.L/heelroll.L/toeroll.L
+        weight: 1
+      - path: Armature/footcontrol.L/heelroll.L/toeroll.L/footIK.L
+        weight: 1
+      - path: Armature/footcontrol.L/heelroll.L/toeroll.L/footIK.L/footIK.L_end
+        weight: 1
+      - path: Armature/footctrl.R
+        weight: 1
+      - path: Armature/footctrl.R/footrollCTRL.R
+        weight: 1
+      - path: Armature/footctrl.R/footrollCTRL.R/footrollCTRL.R_end
+        weight: 1
+      - path: Armature/footctrl.R/heelroll.R
+        weight: 1
+      - path: Armature/footctrl.R/heelroll.R/TOEROOL.R
+        weight: 1
+      - path: Armature/footctrl.R/heelroll.R/TOEROOL.R/rFoot.IK
+        weight: 1
+      - path: Armature/footctrl.R/heelroll.R/TOEROOL.R/rFoot.IK/rFoot.IK_end
+        weight: 1
+      - path: Armature/spine1
+        weight: 1
+      - path: Armature/spine1/spine2
+        weight: 1
+      - path: Armature/spine1/spine2/spine3
+        weight: 1
+      - path: Armature/spine1/spine2/spine3/leftarm
+        weight: 1
+      - path: Armature/spine1/spine2/spine3/leftarm/leftforearm
+        weight: 1
+      - path: Armature/spine1/spine2/spine3/leftarm/leftforearm/lefthand
+        weight: 1
+      - path: Armature/spine1/spine2/spine3/leftarm/leftforearm/lefthand/leftfinge
+        weight: 1
+      - path: Armature/spine1/spine2/spine3/leftarm/leftforearm/lefthand/leftfinge/left
+          finger2
+        weight: 1
+      - path: Armature/spine1/spine2/spine3/leftarm/leftforearm/lefthand/leftfinge/left
+          finger2/left finger2_end
+        weight: 1
+      - path: Armature/spine1/spine2/spine3/leftarm/leftforearm/lefthand/leftfingers1
+        weight: 1
+      - path: Armature/spine1/spine2/spine3/leftarm/leftforearm/lefthand/leftfingers1/leftfingers2
+        weight: 1
+      - path: Armature/spine1/spine2/spine3/leftarm/leftforearm/lefthand/leftfingers1/leftfingers2/leftfingers2_end
+        weight: 1
+      - path: Armature/spine1/spine2/spine3/leftarm.001
+        weight: 1
+      - path: Armature/spine1/spine2/spine3/leftarm.001/leftforearm.001
+        weight: 1
+      - path: Armature/spine1/spine2/spine3/leftarm.001/leftforearm.001/lefthand.001
+        weight: 1
+      - path: Armature/spine1/spine2/spine3/leftarm.001/leftforearm.001/lefthand.001/leftfinge.001
+        weight: 1
+      - path: Armature/spine1/spine2/spine3/leftarm.001/leftforearm.001/lefthand.001/leftfinge.001/left
+          finger2.001
+        weight: 1
+      - path: Armature/spine1/spine2/spine3/leftarm.001/leftforearm.001/lefthand.001/leftfinge.001/left
+          finger2.001/left finger2.001_end
+        weight: 1
+      - path: Armature/spine1/spine2/spine3/leftarm.001/leftforearm.001/lefthand.001/leftfingers1.001
+        weight: 1
+      - path: Armature/spine1/spine2/spine3/leftarm.001/leftforearm.001/lefthand.001/leftfingers1.001/leftfingers2.001
+        weight: 1
+      - path: Armature/spine1/spine2/spine3/leftarm.001/leftforearm.001/lefthand.001/leftfingers1.001/leftfingers2.001/leftfingers2.001_end
+        weight: 1
+      - path: Armature/spine1/spine2/spine3/neck
+        weight: 1
+      - path: Armature/spine1/spine2/spine3/neck/head
+        weight: 1
+      - path: Armature/spine1/spine2/spine3/neck/head/head_end
+        weight: 1
+      - path: Armature/spine1/thigh
+        weight: 1
+      - path: Armature/spine1/thigh/leg
+        weight: 1
+      - path: Armature/spine1/thigh/leg/root1
+        weight: 1
+      - path: Armature/spine1/thigh/leg/root1/foot2
+        weight: 1
+      - path: Armature/spine1/thigh/leg/root1/foot2/foot2_end
+        weight: 1
+      - path: Armature/spine1/thigh.001
+        weight: 1
+      - path: Armature/spine1/thigh.001/leg.001
+        weight: 1
+      - path: Armature/spine1/thigh.001/leg.001/root1R
+        weight: 1
+      - path: Armature/spine1/thigh.001/leg.001/root1R/foot2.001
+        weight: 1
+      - path: Armature/spine1/thigh.001/leg.001/root1R/foot2.001/foot2.001_end
+        weight: 1
+      - path: Camera
+        weight: 1
+      - path: Cube.001
+        weight: 1
+      - path: Cube.003
+        weight: 1
+      - path: Cylinder
+        weight: 1
+      - path: Lamp
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 1
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

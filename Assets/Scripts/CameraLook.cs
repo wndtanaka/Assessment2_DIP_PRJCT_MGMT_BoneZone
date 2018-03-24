@@ -6,7 +6,7 @@ public class CameraLook : MonoBehaviour
     public Camera mainCamera;
     public Transform player;
 
-    public float distance = 7f;//distance between character and camera
+    public float distance = 10f;//distance between character and camera
 
     float x = 0f;
     float y = 0f;
@@ -20,6 +20,8 @@ public class CameraLook : MonoBehaviour
     private bool click = false;
     //stores cameras distance from player
     private float curDist = 0;
+
+    public LayerMask layerMask;
 
     private void Start()
     {
@@ -36,11 +38,12 @@ public class CameraLook : MonoBehaviour
         x += Input.GetAxis("Mouse X") * xSpeed * distance * 0.02f;
         y -= Input.GetAxis("Mouse Y") * ySpeed * 0.02f;
         //set rotation
+        y = Mathf.Clamp(y, -60f, 60f);
         Quaternion rotation = Quaternion.Euler(y, x, 0);
         //changes distance between max and min distancy by mouse scroll
         //distance = Mathf.Clamp(distance - Input.GetAxis("Mouse ScrollWheel") * 5, distanceMin, distanceMax);
         //negative distance of camera
-        Vector3 negDistance = new Vector3(0.0f, 0.0f, -distance);
+        Vector3 negDistance = new Vector3(0.0f, 5f, -distance);
         //cameras postion
         Vector3 position = rotation * negDistance + player.position;
         //rotation and position of our camera to different variables
@@ -55,9 +58,9 @@ public class CameraLook : MonoBehaviour
         //store raycast hit
         RaycastHit hit;
         //if camera detects something behind or under it move camera to hitpoint so it doesn't go throught wall/floor
-        if (Physics.Raycast(player.position, (transform.position - player.position).normalized, out hit, (distance <= 0 ? -distance : distance)))
+        if (Physics.Raycast(player.position, (transform.position - player.position).normalized, out hit, (distance <= 0 ? -distance : distance), ~layerMask))
         {
-            transform.position = hit.point + new Vector3(1,0,-1f); ;
+            transform.position = hit.point + new Vector3(1,3,-1f); ;
         }
     }
 }

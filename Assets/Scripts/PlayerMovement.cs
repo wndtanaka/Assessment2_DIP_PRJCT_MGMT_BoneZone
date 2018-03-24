@@ -11,11 +11,13 @@ public class PlayerMovement : MonoBehaviour
     public Vector3 moveDirection = Vector3.zero;
 
     Rigidbody rb;
+    Animator anim;
 
     // Use this for initialization
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        anim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -60,6 +62,15 @@ public class PlayerMovement : MonoBehaviour
         moveDirection = new Vector3(inputH, 0, inputV);
         moveDirection = transform.TransformDirection(moveDirection);
         moveDirection *= speed;
+
+        if (moveDirection.x > 0 || moveDirection.y > 0)
+        {
+            anim.SetBool("isRunning", true);
+        }
+        else
+        {
+            anim.SetBool("isRunning", false);
+        }
 
         //we set rigidbodys velocity to our movedirection wich contains speed and rotation of our character
         rb.velocity = moveDirection;
