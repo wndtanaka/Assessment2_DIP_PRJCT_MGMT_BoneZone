@@ -6,7 +6,7 @@ public class WallEditor : MonoBehaviour
 {
     public float rayRange = 5f;
 
-    MovableWall movableWall;
+    EditableWall editableWall;
     Vector3 offset;
 
     // Use this for initialization
@@ -33,15 +33,23 @@ public class WallEditor : MonoBehaviour
         {
             if (hit.transform.gameObject.layer == LayerMask.NameToLayer("ShiftableWall"))
             {
-                movableWall = hit.transform.GetComponent<MovableWall>();
-                Debug.Log("Shifting Wall");
-                movableWall.ShiftWall();
+                editableWall = hit.transform.GetComponent<EditableWall>();
+                editableWall.ShiftWall();
             }
             if (hit.transform.gameObject.layer == LayerMask.NameToLayer("HackableWall"))
             {
-                movableWall = hit.transform.GetComponent<MovableWall>();
-                Debug.Log("Hacking Wall");
-                movableWall.HackWall();
+                editableWall = hit.transform.GetComponent<EditableWall>();
+                editableWall.HackWall();
+            }
+            if (hit.transform.gameObject.layer == LayerMask.NameToLayer("DrawableWall"))
+            {
+                editableWall = hit.transform.GetComponent<EditableWall>();
+                editableWall.DrawWall(hit);
+            }
+            if (hit.transform.gameObject.layer == LayerMask.NameToLayer("ErasableWall"))
+            {
+                editableWall = hit.transform.GetComponent<EditableWall>();
+                editableWall.EraseWall(hit);
             }
         }
     }
