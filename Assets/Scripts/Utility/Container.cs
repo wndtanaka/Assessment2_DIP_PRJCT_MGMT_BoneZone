@@ -12,8 +12,7 @@ public class Container : MonoBehaviour
         public Guid Id; // Generate Unique ID
         public string Name;
         public int Maximum;
-
-        private int amountTaken;
+        public int amountTaken;
 
         public ContainerItem()
         {
@@ -40,9 +39,29 @@ public class Container : MonoBehaviour
             amountTaken += value;
             return value;
         }
+
+        public void SetAmount(int amount)
+        {
+            amountTaken -= amount;
+            if (amountTaken < 0)
+            {
+                amountTaken = 0;
+            }
+        }
     }
 
-    public List<ContainerItem> items = new List<ContainerItem>();
+    public List<ContainerItem> items;
+    public delegate void OnContainerReady();
+    public event OnContainerReady onContainerReady;
+
+    private void Awake()
+    {
+        items = new List<ContainerItem>();
+        if (onContainerReady != null)
+        {
+            onContainerReady();
+        }
+    }
 
     public Guid Add(string name, int maximum)
     {
@@ -56,9 +75,20 @@ public class Container : MonoBehaviour
         return items.Last().Id;
     }
 
+    public void Put(string name, int amount)
+    {
+        // get continerItem by its name
+        ContainerItem containerItem = items.Where(x => x.Name == name).FirstOrDefault();
+        if (containerItem == null)
+        {
+            return;
+        }
+        containerItem.SetAmount(amount);
+    }
+
     public int TakeFromContainer(Guid id, int amount)
     {
-        ContainerItem containerItem = items.Where(x => x.Id == id).FirstOrDefault();
+        ContainerItem containerItem = GetContainerItem(id);
         if (containerItem == null)
         {
             return -1;
@@ -66,5 +96,20 @@ public class Container : MonoBehaviour
         return containerItem.GetAmount(amount);
     }
 
+    public int GetAmountRemaining(Guid id)
+    {
+        ContainerItem containerItem = GetContainerItem(id);
+        if (containerItem == null)
+        {
+            return -1;
+        }
+        return containerItem.Remaining;
+    }
 
+    private ContainerItem GetContainerItem(Guid id)
+    {
+        // get continerItem by its ID
+        ContainerItem containerItem = items.Where(x => x.Id == id).FirstOrDefault();
+        return containerItem;
+    }
 }

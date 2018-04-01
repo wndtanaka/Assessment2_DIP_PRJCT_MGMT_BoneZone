@@ -11,7 +11,7 @@ public class Health : Destructable
     {
         base.Die();
 
-        GameManager.Instance.Respawner.Despawn(gameObject, inSeconds);
+        GameManager.Instance.Respawner.Respawn(gameObject, inSeconds);
     }
 
     void OnEnable()

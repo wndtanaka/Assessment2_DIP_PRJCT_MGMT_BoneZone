@@ -7,17 +7,21 @@ public class Shooter : MonoBehaviour
     [SerializeField]
     float rateOfFire;
     [SerializeField]
+    int ammoNeededToShoot = 1;
+    [SerializeField]
     Projectile projectile;
     [SerializeField]
     Transform hand;
+    [SerializeField]
+    AudioController attackAudio;
 
     [HideInInspector]
-    public Transform muzzle;
+    public GameObject shootPoint;
 
     public bool canFire;
 
     float nextFireAllowed;
-    protected WeaponReloader reloader;
+    public WeaponReloader reloader;
 
     public void Equip()
     {
@@ -27,7 +31,7 @@ public class Shooter : MonoBehaviour
 
     void Awake()
     {
-        muzzle = transform.Find("Muzzle");
+        shootPoint = GameObject.FindGameObjectWithTag("ShootPoint");
         reloader = GetComponent<WeaponReloader>();
     }
 
@@ -49,26 +53,21 @@ public class Shooter : MonoBehaviour
 
         if (reloader != null)
         {
-            // if is reloading, cant shoot
-            if (reloader.IsReloading)
-            {
-                return;
-            }
-            // if is remaining ammo in mag is zero, cant shoot
-            if (reloader.RoundsRemainingInMag == 0)
+            // if is reloading, cant shoot || if no ammo left, cant shoot || if ammo left < ammo needed to shoot, cant shoot  
+            if (reloader.IsReloading || reloader.RoundsRemainingInMag <= 0 || reloader.RoundsRemainingInMag < ammoNeededToShoot)
             {
                 return;
             }
             // otherwise take 1 bullet from mag (changeable to more than 1, if want to make charging weapon)
-            reloader.TakeFromMag(1);
+            reloader.TakeFromMag(ammoNeededToShoot);
         }
 
         // time counter for continuous shooting
         nextFireAllowed = Time.time + rateOfFire;
 
         // instantiate the projectile
-        Instantiate(projectile, muzzle.position, muzzle.rotation);
-
+        Instantiate(projectile, shootPoint.transform.position, shootPoint.transform.rotation);
+        attackAudio.Play();
         canFire = true;
     }
 }

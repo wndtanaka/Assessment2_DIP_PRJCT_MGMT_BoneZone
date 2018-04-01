@@ -13,6 +13,9 @@ public class PlayerShoot : MonoBehaviour
     bool canFire;
     Transform weaponHolder;
 
+    public delegate void OnWeaponSwitch(Shooter shooter);
+    public event OnWeaponSwitch onWeaponSwitch;
+
     public Shooter ActiveWeapon
     {
         get
@@ -24,7 +27,7 @@ public class PlayerShoot : MonoBehaviour
     void Awake()
     {
         canFire = true;
-        weaponHolder = transform.FindChild("Weapons"); // find all weapons available in Weapons gameObject
+        weaponHolder = transform.FindChild("WeaponsHolder"); // find all weapons available in Weapons gameObject
         weapons = weaponHolder.GetComponentsInChildren<Shooter>(); // getting all the Shooter component and store it as weapons
 
         if (weapons.Length > 0)
@@ -44,6 +47,10 @@ public class PlayerShoot : MonoBehaviour
         activeWeapon = weapons[index];
         activeWeapon.Equip();
         weapons[index].gameObject.SetActive(true);
+        if (onWeaponSwitch != null)
+        {
+            onWeaponSwitch(activeWeapon);
+        }
     }
 
     void DeactiveWeapons()

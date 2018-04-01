@@ -20,7 +20,7 @@ public class WallEditor : MonoBehaviour
     {
         offset = transform.position + new Vector3(0, 3, 0);
         // press Q and E to move the wall to the left and right respectively
-        if (Input.GetKeyDown(KeyCode.E))
+        if (GameManager.Instance.InputController.Interact)
         {
             CheckWall();
         }
@@ -36,17 +36,17 @@ public class WallEditor : MonoBehaviour
                 editableWall = hit.transform.GetComponent<EditableWall>();
                 editableWall.ShiftWall();
             }
-            if (hit.transform.gameObject.layer == LayerMask.NameToLayer("HackableWall"))
+            else if (hit.transform.gameObject.layer == LayerMask.NameToLayer("HackableWall"))
             {
                 editableWall = hit.transform.GetComponent<EditableWall>();
                 editableWall.HackWall();
             }
-            if (hit.transform.gameObject.layer == LayerMask.NameToLayer("DrawableWall"))
+            else if (hit.transform.gameObject.layer == LayerMask.NameToLayer("DrawableWall"))
             {
                 editableWall = hit.transform.GetComponent<EditableWall>();
                 editableWall.DrawWall(hit);
             }
-            if (hit.transform.gameObject.layer == LayerMask.NameToLayer("ErasableWall"))
+            else if (hit.transform.gameObject.layer == LayerMask.NameToLayer("ErasableWall"))
             {
                 editableWall = hit.transform.GetComponent<EditableWall>();
                 editableWall.EraseWall(hit);

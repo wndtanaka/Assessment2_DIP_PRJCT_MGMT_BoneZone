@@ -17,7 +17,13 @@ public class Player : MonoBehaviour
     float speed;
     [SerializeField]
     MouseInput mouseControl; // class accessor
-    
+    [SerializeField]
+    float minimumMoveTreshold;
+
+    InputController playerInput;
+    Vector2 mouseInput;
+    Vector3 previousPosition;
+
     private MoveController m_MoveController;
     public MoveController MoveController
     {
@@ -45,9 +51,19 @@ public class Player : MonoBehaviour
         }
     }
 
-    InputController playerInput;
-    Vector2 mouseInput;
-
+    private PlayerShoot m_PlayerShoot;
+    public PlayerShoot PlayerShoot
+    {
+        get
+        {
+            if (m_PlayerShoot == null)
+            {
+                m_PlayerShoot = GetComponent<PlayerShoot>();
+            }
+            return m_PlayerShoot;
+        }
+    }
+    
     void Awake()
     {
         // get playerInput Manager from GameManager
@@ -58,10 +74,24 @@ public class Player : MonoBehaviour
 
     void Update()
     {
+        Move();
+        LookAround();
+    }
+    void Move()
+    {
         // calculate player direction input and pass them to Move function on MoveController script
         Vector2 direction = new Vector2(playerInput.Vertical * speed, playerInput.Horizontal * speed);
         MoveController.Move(direction);
 
+        if (Vector3.Distance(transform.position, previousPosition) > minimumMoveTreshold)
+        {
+            // TODO footsteps in the future
+        }
+        previousPosition = transform.position;
+    }
+
+    void LookAround()
+    {
         // player rotation using mouseInput
         mouseInput.x = Mathf.Lerp(mouseInput.x, playerInput.MouseInput.x, 1f / mouseControl.damping.x);
         mouseInput.y = Mathf.Lerp(mouseInput.y, playerInput.MouseInput.y, 1f / mouseControl.damping.y);
@@ -70,4 +100,5 @@ public class Player : MonoBehaviour
 
         //Crosshair.LookHeight(mouseInput.y * mouseControl.sensitivity.y);
     }
+
 }

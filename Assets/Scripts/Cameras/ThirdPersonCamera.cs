@@ -18,6 +18,11 @@ public class ThirdPersonCamera : MonoBehaviour
         // Events delegate assign the Player to the localPlayer
         GameManager.Instance.onLocalPlayerJoined += HandleOnLocalPlayerJoined;
     }
+    void Start()
+    {
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+    }
 
     void HandleOnLocalPlayerJoined(Player player)
     {
