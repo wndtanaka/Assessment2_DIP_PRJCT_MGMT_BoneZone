@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+// inherit from Shooter class
 public class Brush : Shooter
 {
     public override void Fire()
@@ -9,7 +10,7 @@ public class Brush : Shooter
         base.Fire();
         if (canFire)
         {
-            // we can fire
+            // further added mechanics here
         }
     }
 

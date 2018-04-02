@@ -69,6 +69,7 @@ public class GameManager
         }
     }
 
+    // setting LocalPlayer upon start using delegate
     private Player m_LocalPlayer;
     public Player LocalPlayer
     {

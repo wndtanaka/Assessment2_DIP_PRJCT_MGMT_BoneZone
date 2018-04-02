@@ -31,6 +31,7 @@ public class Shooter : MonoBehaviour
 
     void Awake()
     {
+        // the projectile's spawn point has ShootPoint tag attached.
         shootPoint = GameObject.FindGameObjectWithTag("ShootPoint");
         reloader = GetComponent<WeaponReloader>();
     }
@@ -46,6 +47,7 @@ public class Shooter : MonoBehaviour
     public virtual void Fire()
     {
         canFire = false;
+        // checking if its not ready attack yet.
         if (Time.time < nextFireAllowed)
         {
             return;

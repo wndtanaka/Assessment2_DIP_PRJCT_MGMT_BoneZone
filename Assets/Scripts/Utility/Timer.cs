@@ -19,6 +19,7 @@ public class Timer : MonoBehaviour
         events = new List<TimedEvent>();
     }
 
+    // other script able to access this function, to add timer mechanics
     public void Add(TimeCallBack timeCallBack, float inSeconds)
     {
         events.Add(new TimedEvent { TimeCallBack = timeCallBack, TimeToExecute = Time.time + inSeconds });

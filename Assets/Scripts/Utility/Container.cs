@@ -29,7 +29,7 @@ public class Container : MonoBehaviour
 
         public int GetAmount(int value)
         {
-            // if the amount that we have + that we have is too greater than the maximum
+            // if the amount that we have + that we have is too greater than the maximum, we will only get the amount that we can get in the inventory
             if ((amountTaken + value) > Maximum)
             {
                 int tooMuch = (amountTaken + value) - Maximum;
@@ -63,6 +63,7 @@ public class Container : MonoBehaviour
         }
     }
 
+    // adding Item in the inspector, by name and maximum amount
     public Guid Add(string name, int maximum)
     {
         items.Add(new ContainerItem
@@ -85,7 +86,7 @@ public class Container : MonoBehaviour
         }
         containerItem.SetAmount(amount);
     }
-
+    // takinng ID as guid and also the amount
     public int TakeFromContainer(Guid id, int amount)
     {
         ContainerItem containerItem = GetContainerItem(id);
