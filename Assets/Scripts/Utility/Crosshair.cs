@@ -17,12 +17,12 @@ public class Crosshair : MonoBehaviour
 
     public void LookHeight(float value)
     {
-        lookHeight += value;
+        //lookHeight += value;
 
-        if (lookHeight > maxAngle || lookHeight < minAngle)
-        {
-            lookHeight -= value;
-        }
+        //if (lookHeight > maxAngle || lookHeight < minAngle)
+        //{
+        //    lookHeight -= value;
+        //}
     }
 
     private void OnGUI()

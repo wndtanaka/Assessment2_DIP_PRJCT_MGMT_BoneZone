@@ -16,9 +16,11 @@ public class Player : MonoBehaviour
     [SerializeField]
     float speed;
     [SerializeField]
-    MouseInput mouseControl; // class accessor
+    MouseInput mouseControl;
     [SerializeField]
     float minimumMoveTreshold;
+
+    public PlayerAim playerAim;
 
     InputController playerInput;
     Vector2 mouseInput;
@@ -63,7 +65,7 @@ public class Player : MonoBehaviour
             return m_PlayerShoot;
         }
     }
-    
+
     void Awake()
     {
         // get playerInput Manager from GameManager
@@ -98,7 +100,9 @@ public class Player : MonoBehaviour
 
         transform.Rotate(Vector3.up * mouseInput.x * mouseControl.sensitivity.x);
 
-        //Crosshair.LookHeight(mouseInput.y * mouseControl.sensitivity.y);
+        Crosshair.LookHeight(mouseInput.y * mouseControl.sensitivity.y);
+
+        playerAim.SetRotation(mouseInput.y * mouseControl.sensitivity.y);
     }
 
 }
