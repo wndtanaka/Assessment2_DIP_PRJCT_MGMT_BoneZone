@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(MoveController))]
+[RequireComponent(typeof(AnimationController))]
 public class Player : MonoBehaviour
 {
     [System.Serializable]

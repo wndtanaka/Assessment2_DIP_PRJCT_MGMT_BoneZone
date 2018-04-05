@@ -55,7 +55,7 @@ public class ThirdPersonCamera : MonoBehaviour
 
         Debug.DrawLine(targetPosition, collisionTargetPoint, Color.blue);
         // if camera detects something between camera and player, then the camera wiill move to the hitpoint
-        if (Physics.Linecast(collisionTargetPoint, targetPosition, out hit))
+        if (Physics.Linecast(collisionTargetPoint, targetPosition, out hit, ~layerMask))
         {
             Vector3 hitPoint = new Vector3(hit.point.x + hit.normal.x * .2f, hit.point.y, hit.point.z + hit.normal.z * .2f);
             // change targetPosition to the new vector
