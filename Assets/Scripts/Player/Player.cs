@@ -69,10 +69,10 @@ public class Player : MonoBehaviour
 
     void Awake()
     {
-        // get playerInput Manager from GameManager
-        playerInput = GameManager.Instance.InputController;
         // assign gameobject that attached to this script to the LocalPlayer in the GameManager
         GameManager.Instance.LocalPlayer = this;
+        // get playerInput Manager from GameManager
+        playerInput = GameManager.Instance.InputController;
     }
 
     void Update()

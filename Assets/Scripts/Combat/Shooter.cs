@@ -14,9 +14,8 @@ public class Shooter : MonoBehaviour
     Transform hand;
     [SerializeField]
     AudioController attackAudio;
-
-    [HideInInspector]
-    public GameObject shootPoint;
+    [SerializeField]
+    GameObject shootPoint;
 
     public bool canFire;
 
@@ -32,7 +31,6 @@ public class Shooter : MonoBehaviour
     void Awake()
     {
         // the projectile's spawn point has ShootPoint tag attached.
-        shootPoint = GameObject.FindGameObjectWithTag("ShootPoint");
         reloader = GetComponent<WeaponReloader>();
     }
 
