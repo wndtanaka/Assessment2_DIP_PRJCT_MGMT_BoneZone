@@ -48,7 +48,7 @@ public class ThirdPersonCamera : MonoBehaviour
         // assign targetRotation, to make the camera always look at the same direction as the localPlayer looking
         Quaternion targetRotation = Quaternion.LookRotation(cameraLookTarget.position - targetPosition, Vector3.up);
 
-        Vector3 collisionTargetPoint = cameraLookTarget.position + localPlayer.transform.up;
+        Vector3 collisionTargetPoint = localPlayer.transform.position + localPlayer.transform.up;
 
         //store raycast hit
         RaycastHit hit;

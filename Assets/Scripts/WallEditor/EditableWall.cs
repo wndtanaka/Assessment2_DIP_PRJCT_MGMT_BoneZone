@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class EditableWall : MonoBehaviour
 {
+    public Walls walls;
     [SerializeField]
     GameObject wall;
 
@@ -54,4 +55,11 @@ public class EditableWall : MonoBehaviour
         Instantiate(wall, hit.transform.position, hit.transform.rotation);
         Debug.Log("Erased a Wall");
     }
+}
+public enum Walls
+{
+    DRAWABLE,
+    ERASEABLE,
+    HACKABLE,
+    SHIFTABLE
 }

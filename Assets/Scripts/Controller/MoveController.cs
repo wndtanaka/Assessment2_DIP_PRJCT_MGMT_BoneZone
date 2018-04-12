@@ -22,7 +22,6 @@ public class MoveController : MonoBehaviour
 
     public void Move(Vector2 direction)
     {
-        Debug.Log("Move");
         if (direction != new Vector2(0, 0))
         {
             onCharacterMove();

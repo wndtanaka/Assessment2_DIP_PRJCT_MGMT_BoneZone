@@ -9,47 +9,47 @@ public class WallEditor : MonoBehaviour
     EditableWall editableWall;
     Vector3 offset;
 
-    // Use this for initialization
     void Start()
     {
-        
+
     }
 
-    // Update is called once per frame
     void Update()
     {
-        offset = transform.position + new Vector3(0, 3, 0);
+        offset = transform.position + new Vector3(0, 1, 0);
         // press Q and E to move the wall to the left and right respectively
         if (GameManager.Instance.InputController.Interact)
         {
             CheckWall();
         }
     }
+
     void CheckWall()
     {
         // checking the wall in rayRange if there is any wall with "MoveableWall" layer attached
         RaycastHit hit;
-        if (Physics.Raycast(transform.position, transform.forward, out hit, rayRange))
+        if (Physics.Raycast(offset, transform.forward, out hit, rayRange))
         {
-            if (hit.transform.gameObject.layer == LayerMask.NameToLayer("ShiftableWall"))
+            // getting editableWall component
+            editableWall = hit.transform.GetComponent<EditableWall>();
+
+            // switching between enums
+            switch (editableWall.walls)
             {
-                editableWall = hit.transform.GetComponent<EditableWall>();
-                editableWall.ShiftWall();
-            }
-            else if (hit.transform.gameObject.layer == LayerMask.NameToLayer("HackableWall"))
-            {
-                editableWall = hit.transform.GetComponent<EditableWall>();
-                editableWall.HackWall();
-            }
-            else if (hit.transform.gameObject.layer == LayerMask.NameToLayer("DrawableWall"))
-            {
-                editableWall = hit.transform.GetComponent<EditableWall>();
-                editableWall.DrawWall(hit);
-            }
-            else if (hit.transform.gameObject.layer == LayerMask.NameToLayer("ErasableWall"))
-            {
-                editableWall = hit.transform.GetComponent<EditableWall>();
-                editableWall.EraseWall(hit);
+                case Walls.DRAWABLE:
+                    editableWall.DrawWall(hit);
+                    break;
+                case Walls.ERASEABLE:
+                    editableWall.EraseWall(hit);
+                    break;
+                case Walls.HACKABLE:
+                    editableWall.HackWall();
+                    break;
+                case Walls.SHIFTABLE:
+                    editableWall.ShiftWall();
+                    break;
+                default:
+                    break;
             }
         }
     }
