@@ -20,6 +20,8 @@ public class Player : MonoBehaviour
     MouseInput mouseControl;
     [SerializeField]
     float minimumMoveTreshold;
+    [SerializeField]
+    AudioController footSteps;
 
     public PlayerAim playerAim;
 
@@ -88,7 +90,7 @@ public class Player : MonoBehaviour
 
         if (Vector3.Distance(transform.position, previousPosition) > minimumMoveTreshold)
         {
-            // TODO footsteps in the future
+            footSteps.Play();
         }
         previousPosition = transform.position;
     }

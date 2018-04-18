@@ -12,7 +12,7 @@ public class AudioController : MonoBehaviour
     [SerializeField]
     float delayBetweenClips;
 
-    bool canPlay;
+    bool canPlay = true;
     AudioSource source;
 
     void Start()
@@ -26,7 +26,7 @@ public class AudioController : MonoBehaviour
         {
             return;
         }
-
+        Debug.Log("Footsteps");
         GameManager.Instance.Timer.Add(() => { canPlay = true; }, delayBetweenClips);
 
         canPlay = false;

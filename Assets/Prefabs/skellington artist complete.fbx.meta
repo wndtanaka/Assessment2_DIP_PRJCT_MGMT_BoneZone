@@ -1,0 +1,506 @@
+fileFormatVersion: 2
+guid: aa298be113620d445987e13185950365
+timeCreated: 1522987274
+licenseType: Pro
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: Armature
+    100002: brush handle 2
+    100004: brush handle 2_end
+    100006: brush handle1
+    100008: brush handle1_end
+    100010: Camera
+    100012: Cube.003
+    100014: Cylinder.001
+    100016: foot2
+    100018: foot2.001
+    100020: foot2.001_end
+    100022: foot2_end
+    100024: footcontrol.L
+    100026: footctrl.R
+    100028: footIK.L
+    100030: footIK.L_end
+    100032: footrollCtrl.l
+    100034: footrollCtrl.l_end
+    100036: footrollCTRL.R
+    100038: footrollCTRL.R_end
+    100040: head
+    100042: head_end
+    100044: heelroll.L
+    100046: heelroll.R
+    100048: Lamp
+    100050: left finger2
+    100052: left finger2.001
+    100054: left finger2.001_end
+    100056: left finger2_end
+    100058: leftarm
+    100060: leftarm.001
+    100062: leftfinge
+    100064: leftfinge.001
+    100066: leftfingers1
+    100068: leftfingers1.001
+    100070: leftfingers2
+    100072: leftfingers2.001
+    100074: leftfingers2.001_end
+    100076: leftfingers2_end
+    100078: leftforearm
+    100080: leftforearm.001
+    100082: lefthand
+    100084: lefthand.001
+    100086: leg
+    100088: leg.001
+    100090: neck
+    100092: paint brush main
+    100094: rFoot.IK
+    100096: rFoot.IK_end
+    100098: root1
+    100100: root1R
+    100102: //RootNode
+    100104: spine1
+    100106: spine2
+    100108: spine3
+    100110: Sun
+    100112: thigh
+    100114: thigh.001
+    100116: toeroll.L
+    100118: TOEROOL.R
+    400000: Armature
+    400002: brush handle 2
+    400004: brush handle 2_end
+    400006: brush handle1
+    400008: brush handle1_end
+    400010: Camera
+    400012: Cube.003
+    400014: Cylinder.001
+    400016: foot2
+    400018: foot2.001
+    400020: foot2.001_end
+    400022: foot2_end
+    400024: footcontrol.L
+    400026: footctrl.R
+    400028: footIK.L
+    400030: footIK.L_end
+    400032: footrollCtrl.l
+    400034: footrollCtrl.l_end
+    400036: footrollCTRL.R
+    400038: footrollCTRL.R_end
+    400040: head
+    400042: head_end
+    400044: heelroll.L
+    400046: heelroll.R
+    400048: Lamp
+    400050: left finger2
+    400052: left finger2.001
+    400054: left finger2.001_end
+    400056: left finger2_end
+    400058: leftarm
+    400060: leftarm.001
+    400062: leftfinge
+    400064: leftfinge.001
+    400066: leftfingers1
+    400068: leftfingers1.001
+    400070: leftfingers2
+    400072: leftfingers2.001
+    400074: leftfingers2.001_end
+    400076: leftfingers2_end
+    400078: leftforearm
+    400080: leftforearm.001
+    400082: lefthand
+    400084: lefthand.001
+    400086: leg
+    400088: leg.001
+    400090: neck
+    400092: paint brush main
+    400094: rFoot.IK
+    400096: rFoot.IK_end
+    400098: root1
+    400100: root1R
+    400102: //RootNode
+    400104: spine1
+    400106: spine2
+    400108: spine3
+    400110: Sun
+    400112: thigh
+    400114: thigh.001
+    400116: toeroll.L
+    400118: TOEROOL.R
+    4300000: Cylinder.001
+    4300002: Cube.003
+    7400000: SkeletonA
+    7400002: SkeletonArtistAnim
+    9500000: //RootNode
+    13700000: Cube.003
+    13700002: Cylinder.001
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: SkeletonA
+      takeName: Armature|ArmatureAction
+      firstFrame: 0
+      lastFrame: 107
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/footcontrol.L
+        weight: 1
+      - path: Armature/footcontrol.L/footrollCtrl.l
+        weight: 1
+      - path: Armature/footcontrol.L/footrollCtrl.l/footrollCtrl.l_end
+        weight: 1
+      - path: Armature/footcontrol.L/heelroll.L
+        weight: 1
+      - path: Armature/footcontrol.L/heelroll.L/toeroll.L
+        weight: 1
+      - path: Armature/footcontrol.L/heelroll.L/toeroll.L/footIK.L
+        weight: 1
+      - path: Armature/footcontrol.L/heelroll.L/toeroll.L/footIK.L/footIK.L_end
+        weight: 1
+      - path: Armature/footctrl.R
+        weight: 1
+      - path: Armature/footctrl.R/footrollCTRL.R
+        weight: 1
+      - path: Armature/footctrl.R/footrollCTRL.R/footrollCTRL.R_end
+        weight: 1
+      - path: Armature/footctrl.R/heelroll.R
+        weight: 1
+      - path: Armature/footctrl.R/heelroll.R/TOEROOL.R
+        weight: 1
+      - path: Armature/footctrl.R/heelroll.R/TOEROOL.R/rFoot.IK
+        weight: 1
+      - path: Armature/footctrl.R/heelroll.R/TOEROOL.R/rFoot.IK/rFoot.IK_end
+        weight: 1
+      - path: Armature/paint brush main
+        weight: 1
+      - path: Armature/paint brush main/brush handle 2
+        weight: 1
+      - path: Armature/paint brush main/brush handle 2/brush handle 2_end
+        weight: 1
+      - path: Armature/paint brush main/brush handle1
+        weight: 1
+      - path: Armature/paint brush main/brush handle1/brush handle1_end
+        weight: 1
+      - path: Armature/spine1
+        weight: 1
+      - path: Armature/spine1/spine2
+        weight: 1
+      - path: Armature/spine1/spine2/spine3
+        weight: 1
+      - path: Armature/spine1/spine2/spine3/leftarm
+        weight: 1
+      - path: Armature/spine1/spine2/spine3/leftarm/leftforearm
+        weight: 1
+      - path: Armature/spine1/spine2/spine3/leftarm/leftforearm/lefthand
+        weight: 1
+      - path: Armature/spine1/spine2/spine3/leftarm/leftforearm/lefthand/leftfinge
+        weight: 1
+      - path: Armature/spine1/spine2/spine3/leftarm/leftforearm/lefthand/leftfinge/left
+          finger2
+        weight: 1
+      - path: Armature/spine1/spine2/spine3/leftarm/leftforearm/lefthand/leftfinge/left
+          finger2/left finger2_end
+        weight: 1
+      - path: Armature/spine1/spine2/spine3/leftarm/leftforearm/lefthand/leftfingers1
+        weight: 1
+      - path: Armature/spine1/spine2/spine3/leftarm/leftforearm/lefthand/leftfingers1/leftfingers2
+        weight: 1
+      - path: Armature/spine1/spine2/spine3/leftarm/leftforearm/lefthand/leftfingers1/leftfingers2/leftfingers2_end
+        weight: 1
+      - path: Armature/spine1/spine2/spine3/leftarm.001
+        weight: 1
+      - path: Armature/spine1/spine2/spine3/leftarm.001/leftforearm.001
+        weight: 1
+      - path: Armature/spine1/spine2/spine3/leftarm.001/leftforearm.001/lefthand.001
+        weight: 1
+      - path: Armature/spine1/spine2/spine3/leftarm.001/leftforearm.001/lefthand.001/leftfinge.001
+        weight: 1
+      - path: Armature/spine1/spine2/spine3/leftarm.001/leftforearm.001/lefthand.001/leftfinge.001/left
+          finger2.001
+        weight: 1
+      - path: Armature/spine1/spine2/spine3/leftarm.001/leftforearm.001/lefthand.001/leftfinge.001/left
+          finger2.001/left finger2.001_end
+        weight: 1
+      - path: Armature/spine1/spine2/spine3/leftarm.001/leftforearm.001/lefthand.001/leftfingers1.001
+        weight: 1
+      - path: Armature/spine1/spine2/spine3/leftarm.001/leftforearm.001/lefthand.001/leftfingers1.001/leftfingers2.001
+        weight: 1
+      - path: Armature/spine1/spine2/spine3/leftarm.001/leftforearm.001/lefthand.001/leftfingers1.001/leftfingers2.001/leftfingers2.001_end
+        weight: 1
+      - path: Armature/spine1/spine2/spine3/neck
+        weight: 1
+      - path: Armature/spine1/spine2/spine3/neck/head
+        weight: 1
+      - path: Armature/spine1/spine2/spine3/neck/head/head_end
+        weight: 1
+      - path: Armature/spine1/thigh
+        weight: 1
+      - path: Armature/spine1/thigh/leg
+        weight: 1
+      - path: Armature/spine1/thigh/leg/root1
+        weight: 1
+      - path: Armature/spine1/thigh/leg/root1/foot2
+        weight: 1
+      - path: Armature/spine1/thigh/leg/root1/foot2/foot2_end
+        weight: 1
+      - path: Armature/spine1/thigh.001
+        weight: 1
+      - path: Armature/spine1/thigh.001/leg.001
+        weight: 1
+      - path: Armature/spine1/thigh.001/leg.001/root1R
+        weight: 1
+      - path: Armature/spine1/thigh.001/leg.001/root1R/foot2.001
+        weight: 1
+      - path: Armature/spine1/thigh.001/leg.001/root1R/foot2.001/foot2.001_end
+        weight: 1
+      - path: Camera
+        weight: 1
+      - path: Cube.003
+        weight: 1
+      - path: Cylinder.001
+        weight: 1
+      - path: Lamp
+        weight: 1
+      - path: Sun
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: SkeletonArtistAnim
+      takeName: Armature|ArmatureAction
+      firstFrame: 0
+      lastFrame: 107
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/footcontrol.L
+        weight: 1
+      - path: Armature/footcontrol.L/footrollCtrl.l
+        weight: 1
+      - path: Armature/footcontrol.L/footrollCtrl.l/footrollCtrl.l_end
+        weight: 1
+      - path: Armature/footcontrol.L/heelroll.L
+        weight: 1
+      - path: Armature/footcontrol.L/heelroll.L/toeroll.L
+        weight: 1
+      - path: Armature/footcontrol.L/heelroll.L/toeroll.L/footIK.L
+        weight: 1
+      - path: Armature/footcontrol.L/heelroll.L/toeroll.L/footIK.L/footIK.L_end
+        weight: 1
+      - path: Armature/footctrl.R
+        weight: 1
+      - path: Armature/footctrl.R/footrollCTRL.R
+        weight: 1
+      - path: Armature/footctrl.R/footrollCTRL.R/footrollCTRL.R_end
+        weight: 1
+      - path: Armature/footctrl.R/heelroll.R
+        weight: 1
+      - path: Armature/footctrl.R/heelroll.R/TOEROOL.R
+        weight: 1
+      - path: Armature/footctrl.R/heelroll.R/TOEROOL.R/rFoot.IK
+        weight: 1
+      - path: Armature/footctrl.R/heelroll.R/TOEROOL.R/rFoot.IK/rFoot.IK_end
+        weight: 1
+      - path: Armature/paint brush main
+        weight: 1
+      - path: Armature/paint brush main/brush handle 2
+        weight: 1
+      - path: Armature/paint brush main/brush handle 2/brush handle 2_end
+        weight: 1
+      - path: Armature/paint brush main/brush handle1
+        weight: 1
+      - path: Armature/paint brush main/brush handle1/brush handle1_end
+        weight: 1
+      - path: Armature/spine1
+        weight: 1
+      - path: Armature/spine1/spine2
+        weight: 1
+      - path: Armature/spine1/spine2/spine3
+        weight: 1
+      - path: Armature/spine1/spine2/spine3/leftarm
+        weight: 1
+      - path: Armature/spine1/spine2/spine3/leftarm/leftforearm
+        weight: 1
+      - path: Armature/spine1/spine2/spine3/leftarm/leftforearm/lefthand
+        weight: 1
+      - path: Armature/spine1/spine2/spine3/leftarm/leftforearm/lefthand/leftfinge
+        weight: 1
+      - path: Armature/spine1/spine2/spine3/leftarm/leftforearm/lefthand/leftfinge/left
+          finger2
+        weight: 1
+      - path: Armature/spine1/spine2/spine3/leftarm/leftforearm/lefthand/leftfinge/left
+          finger2/left finger2_end
+        weight: 1
+      - path: Armature/spine1/spine2/spine3/leftarm/leftforearm/lefthand/leftfingers1
+        weight: 1
+      - path: Armature/spine1/spine2/spine3/leftarm/leftforearm/lefthand/leftfingers1/leftfingers2
+        weight: 1
+      - path: Armature/spine1/spine2/spine3/leftarm/leftforearm/lefthand/leftfingers1/leftfingers2/leftfingers2_end
+        weight: 1
+      - path: Armature/spine1/spine2/spine3/leftarm.001
+        weight: 1
+      - path: Armature/spine1/spine2/spine3/leftarm.001/leftforearm.001
+        weight: 1
+      - path: Armature/spine1/spine2/spine3/leftarm.001/leftforearm.001/lefthand.001
+        weight: 1
+      - path: Armature/spine1/spine2/spine3/leftarm.001/leftforearm.001/lefthand.001/leftfinge.001
+        weight: 1
+      - path: Armature/spine1/spine2/spine3/leftarm.001/leftforearm.001/lefthand.001/leftfinge.001/left
+          finger2.001
+        weight: 1
+      - path: Armature/spine1/spine2/spine3/leftarm.001/leftforearm.001/lefthand.001/leftfinge.001/left
+          finger2.001/left finger2.001_end
+        weight: 1
+      - path: Armature/spine1/spine2/spine3/leftarm.001/leftforearm.001/lefthand.001/leftfingers1.001
+        weight: 1
+      - path: Armature/spine1/spine2/spine3/leftarm.001/leftforearm.001/lefthand.001/leftfingers1.001/leftfingers2.001
+        weight: 1
+      - path: Armature/spine1/spine2/spine3/leftarm.001/leftforearm.001/lefthand.001/leftfingers1.001/leftfingers2.001/leftfingers2.001_end
+        weight: 1
+      - path: Armature/spine1/spine2/spine3/neck
+        weight: 1
+      - path: Armature/spine1/spine2/spine3/neck/head
+        weight: 1
+      - path: Armature/spine1/spine2/spine3/neck/head/head_end
+        weight: 1
+      - path: Armature/spine1/thigh
+        weight: 1
+      - path: Armature/spine1/thigh/leg
+        weight: 1
+      - path: Armature/spine1/thigh/leg/root1
+        weight: 1
+      - path: Armature/spine1/thigh/leg/root1/foot2
+        weight: 1
+      - path: Armature/spine1/thigh/leg/root1/foot2/foot2_end
+        weight: 1
+      - path: Armature/spine1/thigh.001
+        weight: 1
+      - path: Armature/spine1/thigh.001/leg.001
+        weight: 1
+      - path: Armature/spine1/thigh.001/leg.001/root1R
+        weight: 1
+      - path: Armature/spine1/thigh.001/leg.001/root1R/foot2.001
+        weight: 1
+      - path: Armature/spine1/thigh.001/leg.001/root1R/foot2.001/foot2.001_end
+        weight: 1
+      - path: Camera
+        weight: 1
+      - path: Cube.003
+        weight: 1
+      - path: Cylinder.001
+        weight: 1
+      - path: Lamp
+        weight: 1
+      - path: Sun
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
