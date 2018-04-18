@@ -12,6 +12,7 @@ public class InputController : MonoBehaviour
     public bool MouseWheelDown;
     public bool Reload;
     public bool Interact;
+    public bool Jump;
 
     void Update()
     {
@@ -24,5 +25,6 @@ public class InputController : MonoBehaviour
         MouseWheelDown = Input.GetAxis("Mouse ScrollWheel") < 0;
         Reload = Input.GetKeyDown(KeyCode.R);
         Interact = Input.GetKeyDown(KeyCode.E);
+        Jump = Input.GetButtonDown("Jump");
     }
 }

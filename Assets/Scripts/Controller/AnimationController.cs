@@ -18,13 +18,27 @@ public class AnimationController : MonoBehaviour
         }
     }
 
+    private Player m_Player;
+    public Player Player
+    {
+        get
+        {
+            if (m_Player == null)
+            {
+                m_Player = GetComponent<Player>();
+            }
+            return m_Player;
+        }
+    }
+
     Animator anim;
     // Use this for initialization
     void Start()
     {
         anim = GetComponent<Animator>();
-        MoveController.onCharacterMove += OnAnimation;
-        
+        MoveController.onCharacterMove += OnMove;
+        MoveController.onCharacterJump += OnJump;
+        MoveController.onCharacterIdle += OnIdle;
     }
 
     // Update is called once per frame
@@ -32,29 +46,35 @@ public class AnimationController : MonoBehaviour
     {
 
     }
+    
+    public IEnumerator OnJump()
+    {
+        Player.playerState = Player.PLAYER_STATE.JUMPING;
+        anim.SetBool("isJumping", true);
+        yield return new WaitForSeconds(1);
+        anim.SetBool("isJumping", false);
+        Player.playerState = Player.PLAYER_STATE.IDLE;
+    }
 
     void OnAnimation()
     {
-        anim.SetBool("isMoving", true);
+        //anim.SetBool("isMoving", true);
     }
 
     public void OnIdle()
     {
+        Player.playerState = Player.PLAYER_STATE.IDLE;
         anim.SetBool("isMoving", false);
     }
 
     public void OnMove()
     {
-        //anim.SetBool("isMoving", true);
-    }
-
-    public void OnJump()
-    {
-
+        Player.playerState = Player.PLAYER_STATE.MOVING;
+        anim.SetBool("isMoving", true);
     }
 
     public void OnAttack()
     {
-    
+
     }
 }

@@ -67,7 +67,10 @@ public class Shooter : MonoBehaviour
 
         // instantiate the projectile
         Instantiate(projectile, shootPoint.transform.position, shootPoint.transform.rotation);
-        attackAudio.Play();
+
+        // TODO insert attack audio clip
+        //attackAudio.Play();
+
         canFire = true;
     }
 }

@@ -11,6 +11,8 @@ public class EditableWall : MonoBehaviour
     Vector3 shiftedPosition;
     Vector3 originalPosition;
     Vector3 shiftedOffset = new Vector3(0, 0, 5);
+    Vector3 eraseOffset = new Vector3(-0.5f, 1.5f, -3.5f);
+    Vector3 drawOffset = new Vector3(0.5f, -1.5f, 3.5f);
     bool isShifted = false;
     bool isDrew = false;
     Collider boxCollider;
@@ -46,13 +48,14 @@ public class EditableWall : MonoBehaviour
     public void DrawWall(RaycastHit hit)
     {
         Destroy(gameObject);
-        Instantiate(wall, hit.transform.position, hit.transform.rotation);
+        Instantiate(wall, hit.transform.position + drawOffset, hit.transform.rotation);
         Debug.Log("Placed a Wall");
     }
     public void EraseWall(RaycastHit hit)
     {
+        //Transform tempTrans = this.gameObject.transform;
         Destroy(gameObject);
-        Instantiate(wall, hit.transform.position, hit.transform.rotation);
+        Instantiate(wall, hit.transform.position + eraseOffset, hit.transform.rotation);
         Debug.Log("Erased a Wall");
     }
 }

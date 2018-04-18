@@ -6,6 +6,9 @@ public class WallEditor : MonoBehaviour
 {
     public float rayRange = 5f;
 
+    [SerializeField]
+    LayerMask layerMask;
+
     EditableWall editableWall;
     Vector3 offset;
 
@@ -28,7 +31,7 @@ public class WallEditor : MonoBehaviour
     {
         // checking the wall in rayRange if there is any wall with "MoveableWall" layer attached
         RaycastHit hit;
-        if (Physics.Raycast(offset, transform.forward, out hit, rayRange))
+        if (Physics.Raycast(offset, transform.forward, out hit, rayRange,layerMask))
         {
             // getting editableWall component
             editableWall = hit.transform.GetComponent<EditableWall>();

@@ -6,6 +6,16 @@ using UnityEngine;
 [RequireComponent(typeof(AnimationController))]
 public class Player : MonoBehaviour
 {
+    public enum PLAYER_STATE
+    {
+        IDLE,
+        MOVING,
+        JUMPING,
+        ATTACKING,
+        DEAD
+    }
+    public PLAYER_STATE playerState;
+
     [System.Serializable]
     public class MouseInput
     {
@@ -24,6 +34,8 @@ public class Player : MonoBehaviour
     AudioController footSteps;
 
     public PlayerAim playerAim;
+
+    bool isJumping = false;
 
     InputController playerInput;
     Vector2 mouseInput;
@@ -79,8 +91,10 @@ public class Player : MonoBehaviour
 
     void Update()
     {
+        Jump();
         Move();
         LookAround();
+
     }
     void Move()
     {
@@ -88,7 +102,7 @@ public class Player : MonoBehaviour
         Vector2 direction = new Vector2(playerInput.Vertical * speed, playerInput.Horizontal * speed);
         MoveController.Move(direction);
 
-        if (Vector3.Distance(transform.position, previousPosition) > minimumMoveTreshold)
+        if (Vector3.Distance(transform.position, previousPosition) > minimumMoveTreshold && playerState != PLAYER_STATE.JUMPING)
         {
             footSteps.Play();
         }
@@ -108,4 +122,12 @@ public class Player : MonoBehaviour
         playerAim.SetRotation(mouseInput.y * mouseControl.sensitivity.y);
     }
 
+    void Jump()
+    {
+        if (playerInput.Jump)
+        {
+            isJumping = true;
+            MoveController.Jump();
+        }
+    }
 }
