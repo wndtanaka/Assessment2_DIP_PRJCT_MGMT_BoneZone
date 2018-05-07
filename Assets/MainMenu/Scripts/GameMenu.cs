@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameMenu : MonoBehaviour
 {
@@ -38,10 +39,11 @@ public class GameMenu : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.R) && isPaused)
             Resume();
 
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape) && isPaused)
         {
             Debug.Log("Quit");
-            Quit();
+            //Quit();
+            SceneManager.LoadScene("MainMenu1");
         }
     }
 
@@ -73,6 +75,11 @@ public class GameMenu : MonoBehaviour
         Debug.Log("Is not Paused");
     }
 
+    public void Restart()
+    {
+
+    }
+
     public void Quit()
     {
         Debug.Log("Quit");
@@ -87,7 +94,7 @@ public class GameMenu : MonoBehaviour
         hoverSFX.Play();
     }
 
-    void playClickSound()
+    public void playClickSound()
     {
         clickSFX.Play();
     }
