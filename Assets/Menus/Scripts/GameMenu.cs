@@ -7,11 +7,12 @@ public class GameMenu : MonoBehaviour
 {
     public GameObject pauseMenu;
     public AudioSource hoverSFX, clickSFX;
-
+    public GameObject gameoverMenu;
+    public GameObject aimPivot;
 
     private Animator anim;
     private bool isPaused = false;
-    InputController inputContoller;
+    private InputController inputContoller;
 
     void Awake()
     {
@@ -24,12 +25,14 @@ public class GameMenu : MonoBehaviour
     {
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
+        aimPivot.SetActive(true);
     }
 
     void ShowCursor()
     {
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
+        aimPivot.SetActive(false);
     }
 
     void Update ()
@@ -48,6 +51,9 @@ public class GameMenu : MonoBehaviour
             Debug.Log("Quit");
             Quit();
         }
+
+        if (inputContoller.QuitGame && gameoverMenu.activeSelf == true)
+            Quit();
     }
 
     #region Pause Menu

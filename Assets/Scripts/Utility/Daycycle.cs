@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class Daycycle : MonoBehaviour
 {
     public float minutesPerSecond = 5f;
+    public GameObject gameoverMenu;
 
     Quaternion startRotation;
 
@@ -24,7 +25,9 @@ public class Daycycle : MonoBehaviour
         if (DayNightController.currentTime >= 8 && DayNightController.currentTime <= 17)
         {
             Debug.Log("Die");
-            SceneManager.LoadScene("GameOver");
+            //SceneManager.LoadScene("GameOver");
+            gameoverMenu.SetActive(true);
+            Time.timeScale = 0;   
         }
     }
 }

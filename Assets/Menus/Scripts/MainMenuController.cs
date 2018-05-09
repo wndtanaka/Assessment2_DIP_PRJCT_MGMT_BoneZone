@@ -34,10 +34,12 @@ public class MainMenuController : MonoBehaviour
         if (Screen.fullScreen)
         {
             isFullScreen = true;
+            fullScreenText.text = "ON"; 
         }
         else
         {
             isFullScreen = false;
+            fullScreenText.text = "OFF";
         }
 
         brightnessSlider.value = directLight.intensity; 
@@ -138,10 +140,12 @@ public class MainMenuController : MonoBehaviour
         if (Screen.fullScreen)
         {
             fullScreenText.text = "ON";
+            isFullScreen = true;
         }
         else
         {
             fullScreenText.text = "OFF";
+            isFullScreen = false;
         }
     }
 
