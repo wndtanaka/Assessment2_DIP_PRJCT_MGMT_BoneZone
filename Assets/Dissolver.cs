@@ -25,7 +25,7 @@ public class Dissolver : MonoBehaviour
         }
     }
 
-    void Dissolve()
+    public void Dissolve()
     {
         startTime = Time.time;
         currentY = 0;

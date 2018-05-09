@@ -8,13 +8,16 @@ public class GameMenu : MonoBehaviour
     public GameObject pauseMenu;
     public AudioSource hoverSFX, clickSFX;
 
+
     private Animator anim;
     private bool isPaused = false;
+    InputController inputContoller;
 
     void Awake()
     {
         anim = GetComponent<Animator>();
         HideCursor();
+        inputContoller = GameManager.Instance.InputController;
     }
 
     void HideCursor()
@@ -31,16 +34,16 @@ public class GameMenu : MonoBehaviour
 
     void Update ()
     {
-        if (Input.GetKeyDown(KeyCode.P) && !isPaused)
+        if (inputContoller.Pause && !isPaused)
         {
             OpenPause();
             ShowCursor();
         }
 
-        if (Input.GetKeyDown(KeyCode.R) && isPaused)
+        if (inputContoller.Resume && isPaused)
             Resume();
 
-        if (Input.GetKeyDown(KeyCode.Escape) && isPaused)
+        if (inputContoller.QuitGame && isPaused)
         {
             Debug.Log("Quit");
             Quit();

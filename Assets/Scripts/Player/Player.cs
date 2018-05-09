@@ -130,6 +130,4 @@ public class Player : MonoBehaviour
             MoveController.Jump();
         }
     }
-    // test only
-    // test branch
 }

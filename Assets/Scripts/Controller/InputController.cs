@@ -13,6 +13,9 @@ public class InputController : MonoBehaviour
     public bool Reload;
     public bool Interact;
     public bool Jump;
+    public bool Pause;
+    public bool Resume;
+    public bool QuitGame;
 
     void Update()
     {
@@ -26,5 +29,8 @@ public class InputController : MonoBehaviour
         Reload = Input.GetKeyDown(KeyCode.R);
         Interact = Input.GetKeyDown(KeyCode.E);
         Jump = Input.GetButtonDown("Jump");
+        Pause = Input.GetKeyDown(KeyCode.P);
+        Resume = Input.GetKeyDown(KeyCode.Q);
+        QuitGame = Input.GetKeyDown(KeyCode.Escape);
     }
 }
