@@ -33,6 +33,9 @@ public class AudioController : MonoBehaviour
         int clipIndex = Random.Range(0, clips.Length);
 
         AudioClip clip = clips[clipIndex];
-        source.PlayOneShot(clip);
+        if (!AnimationController.isJumping)
+        {
+            source.PlayOneShot(clip);
+        }
     }
 }

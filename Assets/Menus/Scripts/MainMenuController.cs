@@ -36,12 +36,12 @@ public class MainMenuController : MonoBehaviour
             isFullScreen = true;
             fullScreenText.text = "ON"; 
         }
-        else
+        else if (!Screen.fullScreen)
         {
             isFullScreen = false;
             fullScreenText.text = "OFF";
         }
-
+        Debug.Log(isFullScreen);
         brightnessSlider.value = directLight.intensity; 
         musicSlider.value = music.volume;
         soundSlider.value = AudioListener.volume; 
@@ -142,7 +142,7 @@ public class MainMenuController : MonoBehaviour
             fullScreenText.text = "ON";
             isFullScreen = true;
         }
-        else
+        else if (!Screen.fullScreen)
         {
             fullScreenText.text = "OFF";
             isFullScreen = false;

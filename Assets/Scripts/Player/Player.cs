@@ -94,7 +94,7 @@ public class Player : MonoBehaviour
         Jump();
         Move();
         LookAround();
-
+        Cut();
     }
     void Move()
     {
@@ -128,6 +128,19 @@ public class Player : MonoBehaviour
         {
             isJumping = true;
             MoveController.Jump();
+        }
+    }
+
+    void Cut()
+    {
+        Animator anim = GetComponent<Animator>();
+        if (playerInput.Cut)
+        {
+            anim.SetBool("isAttacking", true);
+        }
+        else
+        {
+            anim.SetBool("isAttacking", false);
         }
     }
 }

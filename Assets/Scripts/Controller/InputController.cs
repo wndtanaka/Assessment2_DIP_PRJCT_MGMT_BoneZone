@@ -8,6 +8,7 @@ public class InputController : MonoBehaviour
     public float Vertical;
     public Vector2 MouseInput;
     public bool Fire1;
+    public bool Cut;
     public bool MouseWheelUp;
     public bool MouseWheelDown;
     public bool Reload;
@@ -24,6 +25,7 @@ public class InputController : MonoBehaviour
         Horizontal = Input.GetAxisRaw("Horizontal");
         MouseInput = new Vector2(Input.GetAxisRaw("Mouse X"), Input.GetAxisRaw("Mouse Y"));
         Fire1 = Input.GetButton("Fire1");
+        Cut = Input.GetKey(KeyCode.C);
         MouseWheelUp = Input.GetAxis("Mouse ScrollWheel") > 0;
         MouseWheelDown = Input.GetAxis("Mouse ScrollWheel") < 0;
         Reload = Input.GetKeyDown(KeyCode.R);

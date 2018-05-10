@@ -35,17 +35,18 @@ public class PlayerMovement : MonoBehaviour
         {
             isGrounded = false;
         }
-
+        Debug.Log(isGrounded);
         // checks if we grounded and pressed space key, then we can jump
         if (isGrounded && Input.GetKeyDown(KeyCode.Space))
         {
             // TODO Jump
+            isJumping = true;
         }
         else
         {
-            //isJumping = false;
+            isJumping = false;
         }
-
+        Debug.Log(isJumping);
         // press Q to rotate to the left and E to the right
         if (Input.GetKey(KeyCode.Q))
         {

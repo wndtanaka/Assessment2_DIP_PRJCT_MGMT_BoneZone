@@ -30,7 +30,7 @@ public class AnimationController : MonoBehaviour
             return m_Player;
         }
     }
-
+    public static bool isJumping;
     Animator anim;
     // Use this for initialization
     void Start()
@@ -44,7 +44,7 @@ public class AnimationController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        isJumping = anim.GetBool("isJumping"); 
     }
     
     public IEnumerator OnJump()
