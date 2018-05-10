@@ -30,21 +30,25 @@ public class MainMenuController : MonoBehaviour
         Cursor.visible = true;
 
         anim = GetComponent<Animator>();
+        
+        brightnessSlider.value = directLight.intensity; 
+        musicSlider.value = music.volume;
+        soundSlider.value = AudioListener.volume; 
+    }
 
+    private void Update()
+    {
         if (Screen.fullScreen)
         {
             isFullScreen = true;
-            fullScreenText.text = "ON"; 
+            fullScreenText.text = "OFF";
         }
         else if (!Screen.fullScreen)
         {
             isFullScreen = false;
-            fullScreenText.text = "OFF";
+            fullScreenText.text = "ON";
         }
         Debug.Log(isFullScreen);
-        brightnessSlider.value = directLight.intensity; 
-        musicSlider.value = music.volume;
-        soundSlider.value = AudioListener.volume; 
     }
 
     #region Open Different panels
@@ -139,14 +143,15 @@ public class MainMenuController : MonoBehaviour
 
         if (Screen.fullScreen)
         {
-            fullScreenText.text = "ON";
+            fullScreenText.text = "OFF";
             isFullScreen = true;
         }
         else if (!Screen.fullScreen)
         {
-            fullScreenText.text = "OFF";
+            fullScreenText.text = "ON";
             isFullScreen = false;
         }
+        Debug.Log(isFullScreen);
     }
 
     public void Resolution1280()
