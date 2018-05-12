@@ -34,6 +34,8 @@ public class Player : MonoBehaviour
     AudioController footSteps;
 
     public PlayerAim playerAim;
+    public GameObject winningMenu, aimingPivot;
+    public GameObject winningPoint;
 
     bool isJumping = false;
 
@@ -143,4 +145,16 @@ public class Player : MonoBehaviour
             anim.SetBool("isAttacking", false);
         }
     }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject == winningPoint)
+        {
+            winningMenu.SetActive(true);
+            aimingPivot.SetActive(false);
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+            Time.timeScale = 0;
+        }
+    } 
 }

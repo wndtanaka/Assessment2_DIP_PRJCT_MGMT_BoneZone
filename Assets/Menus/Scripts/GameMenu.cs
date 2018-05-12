@@ -9,6 +9,7 @@ public class GameMenu : MonoBehaviour
     public AudioSource hoverSFX, clickSFX;
     public GameObject gameoverMenu;
     public GameObject aimPivot;
+    public GameObject winningMenu;
 
     private Animator anim;
     private bool isPaused = false;
@@ -53,6 +54,9 @@ public class GameMenu : MonoBehaviour
         }
 
         if (inputContoller.QuitGame && gameoverMenu.activeSelf == true)
+            Quit();
+
+        if (inputContoller.QuitGame && winningMenu.activeSelf == true)
             Quit();
     }
 
