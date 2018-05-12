@@ -17,6 +17,7 @@ public class Shooter : MonoBehaviour
     [SerializeField]
     GameObject shootPoint;
 
+    public AudioSource shootSound;
     public bool canFire;
 
     float nextFireAllowed;
@@ -69,7 +70,7 @@ public class Shooter : MonoBehaviour
         Instantiate(projectile, shootPoint.transform.position, shootPoint.transform.rotation);
 
         // TODO insert attack audio clip
-        //attackAudio.Play();
+        shootSound.Play();
 
         canFire = true;
     }

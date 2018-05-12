@@ -36,7 +36,9 @@ public class Player : MonoBehaviour
     public PlayerAim playerAim;
     public GameObject winningMenu, aimingPivot;
     public GameObject winningPoint;
+    public AudioSource grunt;
 
+    bool canPlayGrunt = true;
     bool isJumping = false;
 
     InputController playerInput;
@@ -98,6 +100,7 @@ public class Player : MonoBehaviour
         LookAround();
         Cut();
     }
+
     void Move()
     {
         // calculate player direction input and pass them to Move function on MoveController script
@@ -139,11 +142,24 @@ public class Player : MonoBehaviour
         if (playerInput.Cut)
         {
             anim.SetBool("isAttacking", true);
+            Debug.Log(canPlayGrunt);
+            if (canPlayGrunt)
+            {
+                StartCoroutine(CanPlayAgain());
+            }
         }
         else
         {
             anim.SetBool("isAttacking", false);
         }
+    }
+    
+    IEnumerator CanPlayAgain()
+    {
+        grunt.Play();
+        canPlayGrunt = false;
+        yield return new WaitForSeconds(0.6f);
+        canPlayGrunt = true;
     }
 
     private void OnCollisionEnter(Collision collision)

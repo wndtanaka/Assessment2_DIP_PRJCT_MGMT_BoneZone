@@ -29,7 +29,7 @@ public class InputController : MonoBehaviour
         MouseWheelUp = Input.GetAxis("Mouse ScrollWheel") > 0;
         MouseWheelDown = Input.GetAxis("Mouse ScrollWheel") < 0;
         Reload = Input.GetKeyDown(KeyCode.R);
-        Interact = Input.GetKeyDown(KeyCode.E);
+        Interact = Input.GetKeyUp(KeyCode.E);
         Jump = Input.GetButtonDown("Jump");
         Pause = Input.GetKeyDown(KeyCode.P);
         Resume = Input.GetKeyDown(KeyCode.Q);
