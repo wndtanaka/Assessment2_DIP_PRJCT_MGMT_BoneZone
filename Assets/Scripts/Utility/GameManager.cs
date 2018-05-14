@@ -89,9 +89,10 @@ public class GameManager : MonoBehaviour
         set
         {
             m_LocalPlayer = value;
-            if (onLocalPlayerJoined != null)
+            if (m_LocalPlayer != null && 
+                onLocalPlayerJoined != null)
             {
-                onLocalPlayerJoined(m_LocalPlayer);
+                onLocalPlayerJoined.Invoke(m_LocalPlayer);
             }
         }
     }

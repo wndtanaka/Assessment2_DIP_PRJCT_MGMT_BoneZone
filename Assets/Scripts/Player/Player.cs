@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 [RequireComponent(typeof(MoveController))]
 [RequireComponent(typeof(AnimationController))]
@@ -25,6 +26,10 @@ public class Player : MonoBehaviour
     }
 
     [SerializeField]
+    float currentHealth;
+    [SerializeField]
+    float maxHealth = 100;
+    [SerializeField]
     float speed;
     [SerializeField]
     MouseInput mouseControl;
@@ -36,7 +41,10 @@ public class Player : MonoBehaviour
     public PlayerAim playerAim;
     public GameObject winningMenu, aimingPivot;
     public GameObject winningPoint;
+    public GameObject gameOverMenu;
     public AudioSource grunt;
+
+    public Image healthBar;
 
     bool canPlayGrunt = true;
     bool isJumping = false;
@@ -93,12 +101,21 @@ public class Player : MonoBehaviour
         playerInput = GameManager.Instance.InputController;
     }
 
+    void Start()
+    {
+        currentHealth = maxHealth;
+    }
+
     void Update()
     {
         Jump();
         Move();
         LookAround();
         Cut();
+        if (Input.GetKeyDown(KeyCode.L))
+        {
+            TakeDamage(20);
+        }
     }
 
     void Move()
@@ -172,5 +189,15 @@ public class Player : MonoBehaviour
             Cursor.visible = true;
             Time.timeScale = 0;
         }
-    } 
+    }
+    public void TakeDamage(float damage)
+    {
+        currentHealth -= damage;
+        healthBar.fillAmount = currentHealth / maxHealth;
+        if (currentHealth <= 0)
+        {
+            gameOverMenu.SetActive(true);
+            Time.timeScale = 0;
+        }
+    }
 }

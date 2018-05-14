@@ -15,7 +15,7 @@ public class GameMenu : MonoBehaviour
     private bool isPaused = false;
     private InputController inputContoller;
 
-    void Awake()
+    void Start()
     {
         anim = GetComponent<Animator>();
         HideCursor();
