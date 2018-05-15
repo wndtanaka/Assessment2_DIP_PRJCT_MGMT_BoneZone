@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.UI;
 
 public class EnemyAI : MonoBehaviour
 {
@@ -9,6 +10,8 @@ public class EnemyAI : MonoBehaviour
     public Animator enemyAnim;
     public Transform target;
     public AudioSource bulletHitSFX;
+    public Image healthBar;
+
     bool isEntered = false;
     NavMeshAgent nav;
     Vector3 direction;
@@ -18,7 +21,17 @@ public class EnemyAI : MonoBehaviour
     {
         nav = GetComponent<NavMeshAgent>();
         target = GameObject.FindGameObjectWithTag("Player").transform;
+        healthBar.fillAmount = 1;
     }
+
+    private void Update()
+    {
+        if (healthBar.fillAmount <= 0)
+        {
+            Destroy(gameObject);
+            Debug.Log("Enemy Destroyed");
+        }
+    } 
 
     void LateUpdate()
     {
@@ -39,6 +52,7 @@ public class EnemyAI : MonoBehaviour
         {
             lookRadius = 10f;
         }
+        
     }
 
     void FaceTarget()
@@ -56,9 +70,10 @@ public class EnemyAI : MonoBehaviour
 
     private void OnCollisionEnter(Collision col)
     {
-        if (col.gameObject.tag == "Bullet")
+        if (col.gameObject.tag == "Bullet" || col.gameObject.tag == "Player")
         {
             bulletHitSFX.Play();
+            healthBar.fillAmount -= 0.15f;
         }
     }
 
