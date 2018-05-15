@@ -73,7 +73,7 @@ public class EnemyAI : MonoBehaviour
         if (col.gameObject.tag == "Bullet" || col.gameObject.tag == "Player")
         {
             bulletHitSFX.Play();
-            healthBar.fillAmount -= 0.15f;
+            healthBar.fillAmount -= 0.101f;
         }
     }
 
