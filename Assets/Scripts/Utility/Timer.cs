@@ -14,7 +14,7 @@ public class Timer : MonoBehaviour
 
     private List<TimedEvent> events;
 
-    private void Awake()
+    private void Start()
     {
         events = new List<TimedEvent>();
     }

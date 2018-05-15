@@ -29,7 +29,7 @@ public class Shooter : MonoBehaviour
         transform.SetParent(hand);
     }
 
-    void Awake()
+    void Start()
     {
         // the projectile's spawn point has ShootPoint tag attached.
         reloader = GetComponent<WeaponReloader>();

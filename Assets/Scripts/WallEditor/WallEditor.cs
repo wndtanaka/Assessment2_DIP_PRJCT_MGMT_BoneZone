@@ -12,11 +12,6 @@ public class WallEditor : MonoBehaviour
     EditableWall editableWall;
     Vector3 offset;
 
-    void Start()
-    {
-
-    }
-
     void Update()
     {
         offset = transform.position + new Vector3(0, 1, 0);

@@ -16,7 +16,7 @@ public class AIAgent : MonoBehaviour
     private List<SteeringBehaviour> behaviours;
     private NavMeshAgent nav;
 
-    void Awake()
+    void Start()
     {
         nav = GetComponent<NavMeshAgent>();
         behaviours = new List<SteeringBehaviour>(GetComponents<SteeringBehaviour>());

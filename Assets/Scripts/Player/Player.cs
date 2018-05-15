@@ -95,14 +95,15 @@ public class Player : MonoBehaviour
 
     void Awake()
     {
-        // assign gameobject that attached to this script to the LocalPlayer in the GameManager
-        GameManager.Instance.LocalPlayer = this;
-        // get playerInput Manager from GameManager
-        playerInput = GameManager.Instance.InputController;
+
     }
 
     void Start()
     {
+        // assign gameobject that attached to this script to the LocalPlayer in the GameManager
+        GameManager.Instance.LocalPlayer = this;
+        // get playerInput Manager from GameManager
+        playerInput = GameManager.Instance.InputController;
         currentHealth = maxHealth;
     }
 

@@ -24,7 +24,7 @@ public class PlayerShoot : MonoBehaviour
         }
     }
 
-    void Awake()
+    void Start()
     {
         canFire = true;
         weaponHolder = transform.FindChild("WeaponsHolder"); // find all weapons available in Weapons gameObject
