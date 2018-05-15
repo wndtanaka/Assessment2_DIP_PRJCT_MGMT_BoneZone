@@ -11,6 +11,7 @@ public class Projectile : MonoBehaviour
     float timeToLive;
     [SerializeField]
     float damage;
+    
 
     void Start()
     {
@@ -35,4 +36,8 @@ public class Projectile : MonoBehaviour
         destructable.TakeDamage(damage);
     }
 
+    void OnCollisionEnter(Collision col)
+    {
+        Destroy(gameObject, 0.05f);
+    }
 }

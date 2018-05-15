@@ -43,7 +43,7 @@ public class Player : MonoBehaviour
     public GameObject winningPoint;
     public GameObject gameOverMenu;
     public AudioSource grunt;
-
+    public int damage = 10;  // will draw damage from enemy script later
     public Image healthBar;
 
     bool canPlayGrunt = true;
@@ -188,6 +188,11 @@ public class Player : MonoBehaviour
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
             Time.timeScale = 0;
+        }
+
+        if (collision.gameObject.tag == "Enemy")
+        {
+            TakeDamage(damage);
         }
     }
     public void TakeDamage(float damage)

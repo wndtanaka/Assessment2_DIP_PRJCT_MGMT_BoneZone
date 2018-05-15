@@ -6,8 +6,10 @@ using UnityEngine.AI;
 public class EnemyAI : MonoBehaviour
 {
     public float lookRadius = 20f;
-
+    public Animator enemyAnim;
     public Transform target;
+    public AudioSource bulletHitSFX;
+    bool isEntered = false;
     NavMeshAgent nav;
     Vector3 direction;
 
@@ -18,7 +20,6 @@ public class EnemyAI : MonoBehaviour
         target = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
-    // Update is called once per frame
     void LateUpdate()
     {
         float distance = Vector3.Distance(target.position, transform.position);
@@ -26,6 +27,7 @@ public class EnemyAI : MonoBehaviour
         if (distance <= lookRadius)
         {
             nav.SetDestination(target.position);
+            enemyAnim.SetBool("isMoving", true); 
 
             if (distance <= nav.stoppingDistance + 1)
             {
@@ -52,4 +54,28 @@ public class EnemyAI : MonoBehaviour
         Gizmos.DrawWireSphere(transform.position, lookRadius);
     }
 
+    private void OnCollisionEnter(Collision col)
+    {
+        if (col.gameObject.tag == "Bullet")
+        {
+            bulletHitSFX.Play();
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Player")
+        {
+            enemyAnim.SetBool("isAttacking", true);
+            isEntered = true;
+            Debug.Log(isEntered);
+            StartCoroutine(NotAttack()); 
+        }
+    }
+
+    IEnumerator NotAttack()
+    {
+        yield return new WaitForSeconds(0.6f);
+        enemyAnim.SetBool("isAttacking", false);
+    }
 }
