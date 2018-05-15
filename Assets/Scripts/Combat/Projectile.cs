@@ -38,6 +38,6 @@ public class Projectile : MonoBehaviour
 
     void OnCollisionEnter(Collision col)
     {
-        Destroy(gameObject, 0.05f);
+        Destroy(gameObject);
     }
 }
