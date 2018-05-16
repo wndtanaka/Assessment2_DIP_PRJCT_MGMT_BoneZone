@@ -46,7 +46,7 @@ public class EnemyAI : MonoBehaviour
         }
         else
         {
-            lookRadius = 10f;
+            lookRadius = 20f;
         }
         
     }
