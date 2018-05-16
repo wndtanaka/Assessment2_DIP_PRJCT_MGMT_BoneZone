@@ -167,19 +167,19 @@ public class Player : MonoBehaviour
         Animator anim = GetComponent<Animator>();
         if (playerInput.Cut)
         {
-            anim.SetBool("isAttacking", true);
+            anim.SetTrigger("isAttacking");
             Debug.Log(canPlayGrunt);
             if (canPlayGrunt)
             {
                 StartCoroutine(CanPlayAgain());
             }
         }
-        else
-        {
-            anim.SetBool("isAttacking", false);
-        }
+        //else
+        //{
+        //    anim.SetBool("isAttacking", false);
+        //}
     }
-    
+
     IEnumerator CanPlayAgain()
     {
         grunt.Play();

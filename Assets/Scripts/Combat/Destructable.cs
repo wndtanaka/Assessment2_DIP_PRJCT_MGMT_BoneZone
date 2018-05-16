@@ -47,13 +47,14 @@ public class Destructable : MonoBehaviour
     }
     public virtual void TakeDamage(float amount)
     {
-        damageTaken += amount;
+        damageTaken += 10;
         if (onDamageReceived != null)
         {
             onDamageReceived();
         }
         if (HitPointsRemaining <= 0)
         {
+            Debug.Log("DIE");
             Die();
         }
     }

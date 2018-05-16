@@ -12,6 +12,11 @@ public class EnemyAI : MonoBehaviour
     public AudioSource bulletHitSFX;
     public Image healthBar;
 
+    [SerializeField]
+    float currentHealth;
+    [SerializeField]
+    float maxHealth = 100f;
+
     bool isEntered = false;
     NavMeshAgent nav;
     Vector3 direction;
@@ -21,16 +26,7 @@ public class EnemyAI : MonoBehaviour
     {
         nav = GetComponent<NavMeshAgent>();
         target = GameObject.FindGameObjectWithTag("Player").transform;
-        healthBar.fillAmount = 1;
-    }
-
-    private void Update()
-    {
-        if (healthBar.fillAmount <= 0)
-        {
-            Destroy(gameObject);
-            Debug.Log("Enemy Destroyed");
-        }
+        currentHealth = maxHealth;
     } 
 
     void LateUpdate()
@@ -50,7 +46,7 @@ public class EnemyAI : MonoBehaviour
         }
         else
         {
-            lookRadius = 10f;
+            lookRadius = 20f;
         }
         
     }
@@ -68,13 +64,26 @@ public class EnemyAI : MonoBehaviour
         Gizmos.DrawWireSphere(transform.position, lookRadius);
     }
 
-    private void OnCollisionEnter(Collision col)
+    //private void OnCollisionEnter(Collision col)
+    //{
+    //    if (col.gameObject.tag == "Bullet" || col.gameObject.tag == "Player")
+    //    {
+    //        Debug.Log("Hit");
+    //        bulletHitSFX.Play();
+    //        Destroy(col.gameObject);
+    //        TakeDamage(10f);
+    //    }
+    //}
+
+    public void TakeDamage(float amount)
     {
-        if (col.gameObject.tag == "Bullet" || col.gameObject.tag == "Player")
+        currentHealth -= amount;
+        if (currentHealth <= 0)
         {
-            bulletHitSFX.Play();
-            healthBar.fillAmount -= 0.101f;
+            Destroy(gameObject);
+            Debug.Log("Enemy Destroyed");
         }
+        healthBar.fillAmount = currentHealth / maxHealth;
     }
 
     private void OnTriggerEnter(Collider other)
