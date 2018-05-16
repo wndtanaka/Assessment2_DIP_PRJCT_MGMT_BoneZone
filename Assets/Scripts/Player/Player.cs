@@ -171,7 +171,7 @@ public class Player : MonoBehaviour
             anim.SetBool("isAttacking", false);
         }
     }
-    
+
     IEnumerator CanPlayAgain()
     {
         grunt.Play();

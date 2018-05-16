@@ -27,13 +27,13 @@ public class Projectile : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        // get Destructable component on triggered object
-        Destructable destructable = other.transform.GetComponent<Destructable>();
-        if (destructable == null)
+        // get EnemyAI component on triggered object
+        EnemyAI hit = other.transform.GetComponent<EnemyAI>();
+        if (hit == null)
         {
             return;
         }
-        destructable.TakeDamage(damage);
+        hit.TakeDamage(damage);
     }
 
     void OnCollisionEnter(Collision col)

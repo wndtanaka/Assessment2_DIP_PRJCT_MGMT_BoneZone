@@ -25,7 +25,7 @@ public class InputController : MonoBehaviour
         Horizontal = Input.GetAxisRaw("Horizontal");
         MouseInput = new Vector2(Input.GetAxisRaw("Mouse X"), Input.GetAxisRaw("Mouse Y"));
         Fire1 = Input.GetButton("Fire1");
-        Cut = Input.GetKey(KeyCode.C);
+        Cut = Input.GetKeyDown(KeyCode.C);
         MouseWheelUp = Input.GetAxis("Mouse ScrollWheel") > 0;
         MouseWheelDown = Input.GetAxis("Mouse ScrollWheel") < 0;
         Reload = Input.GetKeyDown(KeyCode.R);
