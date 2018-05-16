@@ -93,13 +93,9 @@ public class Player : MonoBehaviour
         }
     }
 
-    void Awake()
-    {
-        rigid = GetComponent<Rigidbody>(); 
-    }
-
     void Start()
     {
+        rigid = GetComponent<Rigidbody>();
         // assign gameobject that attached to this script to the LocalPlayer in the GameManager
         GameManager.Instance.LocalPlayer = this;
         // get playerInput Manager from GameManager

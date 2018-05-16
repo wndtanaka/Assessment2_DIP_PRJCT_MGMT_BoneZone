@@ -25,7 +25,7 @@ public class EnemyAI : MonoBehaviour
     void Start()
     {
         nav = GetComponent<NavMeshAgent>();
-        target = GameObject.FindGameObjectWithTag("Player").transform;
+        //target = GameObject.FindGameObjectWithTag("Player").transform
         currentHealth = maxHealth;
     } 
 
