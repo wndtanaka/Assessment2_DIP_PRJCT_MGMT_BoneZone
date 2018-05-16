@@ -48,7 +48,7 @@ public class Player : MonoBehaviour
 
     bool canPlayGrunt = true;
     bool isJumping = false;
-
+    Rigidbody rigid;
     InputController playerInput;
     Vector2 mouseInput;
     Vector3 previousPosition;
@@ -95,7 +95,7 @@ public class Player : MonoBehaviour
 
     void Awake()
     {
-
+        rigid = GetComponent<Rigidbody>(); 
     }
 
     void Start()
@@ -150,9 +150,17 @@ public class Player : MonoBehaviour
         if (playerInput.Jump)
         {
             isJumping = true;
+            //rigid.useGravity = false;
             MoveController.Jump();
+            //StartCoroutine(GravityEnable()); 
         }
     }
+
+    //IEnumerator GravityEnable()
+    //{
+    //    yield return new WaitForSeconds(2f);
+    //    rigid.useGravity = true;
+    //}
 
     void Cut()
     {
